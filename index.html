@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Concentration Form - Accounting at Queens College</title>
+    <style>
+        h1 {
+            text-align: center;
+            color: red;
+        }
+
+        input[type=text] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type=text]:focus {
+            border-color: #333;
+            background-color: yellow;
+        }
+
+        input[type=submit] {
+            padding: 5px 15px;
+            background: blue;
+            border: 0 none;
+            cursor: pointer;
+            border-radius: 5px;
+            color: white;
+            
+        }
+
+        table#courses {
+            border-spacing: 7px;
+            width: 100%;
+        }
+
+        table#courses td {
+            text-align: center;
+        }
+
+        table#courses th {
+            text-align: center;
+            color: white;
+            background-color: red;
+        }
+
+        table#courses tr:nth-child(even) {
+            background-color: #eee; //background-color: lightblue;
+        }
+
+        table#courses tr:nth-child(odd) {
+            //background-color: #fff;
+            background-color: lightyellow;
+        }
+
+        table#basicInfo {
+            border: 1px solid blue;
+            width: 100%;
+        }
+
+        table.electives {
+            width: 100%;
+        }
+
+        table.electives th {
+            text-align: center;
+            color: white;
+            background-color: red; //border: 1px solid blue;
+        }
+
+        table.electives td {
+            //border: 1px solid blue;
+            background-color: lightyellow;
+        }
+
+        table#table2 {
+            border-spacing: 5px;
+            text-align: right;
+        }
+
+        table#table2 td.myInput {
+            text-align: left; // background-color: yellow;
+        }
+
+        /* Tooltip container */
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px solid blue;
+            /* If you want dots under the hoverable text */
+        }
+
+        /* Tooltip text */
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 600px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+
+            /* Position the tooltip text */
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+
+            /* Fade in tooltip */
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        /* Tooltip arrow */
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Concentration Form (Accounting Department) </h1>
+
+    <form>
+        <table id="basicInfo">
+            <tr>
+                <td>
+
+                    <table id="table1">
+                        <tr>
+                            <td>
+                                Last Name
+                            </td>
+                            <td>
+                                <input type="text" name="lastName" required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                First Name
+                            </td>
+                            <td>
+                                <input type="text" name="firstName" required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Street
+                            </td>
+                            <td>
+                                <input type="text" name="street" required/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                City
+                            </td>
+                            <td>
+                                <input type="text" name="city" required/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                State
+                            </td>
+                            <td>
+                                <input type="text" name="state" required/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Zip
+                            </td>
+                            <td>
+                                <input type="text" name="zip" required/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>Advisor</td>
+                            <td>
+                                <input type="text" readonly name="advisor" value="Qureshi" required/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>&nbsp;</td>
+                <td>
+                    <table id="table2">
+                        <tr>
+                            <td>CUNY First ID</td>
+                            <td class="myInput">
+                                <input type="text" name="cunyFirstID" required />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td class="myInput">
+                                <input type="email" name="email" size="35" required />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>Telephone</td>
+                            <td class="myInput">
+                                <input type="tel" name="telephone" required />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Intended Semester of Graduation
+                            </td>
+                            <td class="myInput">
+                                <select name="graduationSemester" required>
+                                    <option value="">Select</option>
+                                    <option value="Spring">Spring</option>
+                                    <option value="Fall">Fall</option>
+                                    <option value="Summer">Summer</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Intended Year of Graduation
+                            </td>
+                            <td class="myInput">
+                                <input type="text" name="yearGraduation" size="4" maxlength="4" required />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                Type of Student
+                            </td>
+                            <td class="myInput">
+                                <label>
+                                    <input type="radio" value="Day" name="typeStudent" required/>Day</label>
+                                <label>
+                                    <input type="radio" value="Evening" name="typeStudent" required />Evening</label>
+                                <label>
+                                    <input type="radio" value="Weekend" name="typeStudent" required />Weekend</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Are you a Transfer Student
+                            </td>
+                            <td class="myInput">
+                                <label>
+                                    <input type="radio" value="Yes" name="transferStudent" required />Yes</label>
+                                <label>
+                                    <input type="radio" value="No" name="transferStudent" required />No</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Name of Transfer Credit College(s)
+                            </td>
+                            <td class="myInput">
+                                <input type="text" name="transferColleges" id="transferColleges">
+                            </td>
+
+                        </tr>
+
+
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <br />
+       
+        <br />
+        <table id="courses">
+            <tr>
+                <th>
+                    Course
+                    <br/>Description
+                </th>
+                <th>Transfer
+                    <br/>Credit</th>
+                <th>Actual/Planned
+                    <br/>Class Standing</th>
+                <th>Actual/Planned
+                    <br/>Semester</th>
+                <th>Actual/Planned
+                    <br/>Year</th>
+
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Acc 101
+                        <span class="tooltiptext">
+                            Introduction to Accounting I (3 cr.), Upper Freshman, No Prerequisite
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferA101" id="transferA101yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferA101" id="transferA101no" required/>No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingA101" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterA101" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearA101" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Acc 102
+                        <span class="tooltiptext">
+                            Introduction to Accounting II (3 cr.), Lower Sophomore, Prerequisite Acc 101
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferA102" id="transferA102yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferA102" id="transferA102no" required />No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingA102" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterA102" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearA102" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Acc 201
+                        <span class="tooltiptext">
+                            Intermediate Accounting I (4 cr.), Upper Sophomore, Prerequisite Acc 102
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferA201" id="transferA201yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferA201" id="transferA201no" required />No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingA201" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterA201" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearA201" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Acc 305
+                        <span class="tooltiptext">
+                            Cost Accounting I (2 cr.), Upper Sophomore, Prerequisite Acc 102
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferA305" id="transferA305yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferA305" id="transferA305no" required />No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingA305" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterA305" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearA305" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Acc 202
+                        <span class="tooltiptext">
+                            Intermediate Accounting II (2 cr.), Lower Junior, Prerequisite Acc 201
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferA202" id="transferA202yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferA202" id="transferA202no" required />No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingA202" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterA202" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearA202" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Acc 311
+                        <span class="tooltiptext">
+                            Advanced Accounting (3 cr.), Upper Junior, Prerequisite Acc 202
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferA311" id="transferA311yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferA311" id="transferA311no" required />No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingA311" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterA311" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearA311" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Acc 306
+                        <span class="tooltiptext">
+                            Quantitative Techniques (3 cr.), Upper Junior, Prerequisite Acc 305 and Eco 249
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferA306" id="transferA306yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferA306" id="transferA306no" required />No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingA306" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterA306" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearA306" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Acc 321
+                        <span class="tooltiptext">
+                            Auditing I (3 cr.), Lower Senior, Corequisite Acc 311
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferA321" id="transferA321yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferA321" id="transferA321no" required />No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingA321" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterA321" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearA321" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Acc 322
+                        <span class="tooltiptext">
+                            Auditing II (3 cr.), Upper Senior, Pre-requisite Acc 321 and Eco 249
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferA322" id="transferA322yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferA322" id="transferA322no" required />No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingA322" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterA322" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearA322" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Acc 372
+                        <span class="tooltiptext">
+                            Governmental and Institutional Acct (3 cr.), Upper Junior, Pre-requisite Acc 202
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferA372" id="transferA372yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferA372" id="transferA372no" required />No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingA372" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterA372" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearA372" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Acc 261
+                        <span class="tooltiptext">
+                            Business Law I (3 cr.), Upper Sophomore, No Prerequisite
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferA261" id="transferA261yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferA261" id="transferA261no" required />No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingA261" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterA261" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearA261" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Acc 362
+                        <span class="tooltiptext">
+                            Business Law II (3 cr.), Lower Junior, Prerequisite Acc 261
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferA362" id="transferA362yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferA362" id="transferA362no" required />No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingA362" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterA362" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearA362" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Acc 367
+                        <span class="tooltiptext">
+                            Income Taxes (3 cr.), Lower Senior, Prerequisite Acc 102
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferA367" id="transferA367yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferA367" id="transferA367no" required />No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingA367" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterA367" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearA367" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Eco 101
+                        <span class="tooltiptext">
+                            Introduction to Economics I (3 cr.), Upper Freshman, No Prerequisite
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferE101" id="transferE101yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferE101" id="transferE101no" required/>No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingE101" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterE101" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearE101" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Eco 102
+                        <span class="tooltiptext">
+                            Introduction to Economics II (3 cr.), Lower Sophomore, No Prerequisite
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferE102" id="transferE102yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferE102" id="transferE102no" required />No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingE102" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterE102" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearE102" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Eco 215
+                        <span class="tooltiptext">
+                            Money and Banking (3 cr.), Upper Sophomore, Prerequisite Eco 101 and Eco 102
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferE215" id="transferE215yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferE215" id="transferE215no" required/>No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingE215" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterE215" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearE215" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Eco 249 (or Math 241)
+                        <span class="tooltiptext">
+                            Statistics (3 cr.), Upper Junior, Prerequisite Eco 101 and Math 131
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferE249" id="transferE249yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferE249" id="transferE249no" required />No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingE249" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterE249" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearE249" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        Bus 241
+                        <span class="tooltiptext">
+                            Corporate Finance (3 cr.), Lower Junior, Prerequisite Eco 102
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferB241" id="transferB241yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferB241" id="transferB241no" required/>No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingB241" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterB241" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearB241" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip">
+                        CS 12 (or CS 18)
+                        <span class="tooltiptext">
+                            Computer Science (3 cr.), Upper Freshman, Prerequisite None
+                        </span>
+                    </div>
+                </td>
+
+                <td>
+                    <label>
+                        <input type="radio" value="Yes" name="transferC012" id="transferC012yes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferC012" id="transferC012no" required />No</label>
+                </td>
+
+                <td>
+                    <select name="classStandingC012" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="semesterC012" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="yearC012" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+
+
+
+        </table>
+
+
+        <br />
+        <h4>Select ONE
+            <a href="http://www.qc.cuny.edu/Academics/Degrees/DSS/Accounting/Programs/Undergraduate/Pages/Major-Curriculum.aspx" target="_blank">Accounting Elective</a>
+        </h4>
+
+        <table class="electives">
+            <tr>
+                <th>
+                    Course
+                    <br/>Description
+                </th>
+                <th>Transfer
+                    <br/>Credit</th>
+                <th>Actual/Planned
+                    <br/>Class Standing</th>
+                <th>Actual/Planned
+                    <br/>Semester</th>
+                <th>Actual/Planned
+                    <br/>Year</th>
+
+
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <input type="radio" name="acc_elect" value="a341" required />Acc 341: Accounting Information Systems</label>
+                    <br/>
+                    <label>
+                        <input type="radio" name="acc_elect" value="a343" required />Acc 343: Microcomputer Applications in Accounting</label>
+                    <br/>
+                    <label>
+                        <input type="radio" name="acc_elect" value="a350" required />Acc 350: Financial Statement Analysis</label>
+                    <br/>
+                    <label>
+                        <input type="radio" name="acc_elect" value="a363" required />Acc 363: Business Law III</label>
+                    <br/>
+                    <label>
+                        <input type="radio" name="acc_elect" value="a393W" required />Acc 393: Seminar in Accounting</label>
+                    <br/>
+                    <label>
+                        <input type="radio" name="acc_elect" value="a395" required />Acc 398: Internship</label>
+                    <br/>
+                </td>
+                <td align="center">
+                    <label>
+                        <input type="radio" value="Yes" name="transferAELE" id="transferAELEyes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferAELE" id="transferAELEno" required />No</label>
+                </td>
+
+                <td align="center">
+                    <select name="classStandingAELE" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td align="center">
+                    <select name="semesterAELE" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td align="center">
+                    <input type="text" name="yearAELE" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+        </table>
+
+        <h4>Select ONE
+            <a href="http://www.qc.cuny.edu/Academics/Degrees/DSS/Accounting/Programs/Undergraduate/Pages/Major-Curriculum.aspx" target="_blank">Business/Economics Electives</a>
+        </h4>
+        <table class="electives">
+            <tr>
+                <th>
+                    Course
+                    <br/>Description
+                </th>
+                <th>Transfer
+                    <br/>Credit</th>
+                <th>Actual/Planned
+                    <br/>Class Standing</th>
+                <th>Actual/Planned
+                    <br/>Semester</th>
+                <th>Actual/Planned
+                    <br/>Year</th>
+
+
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <input type="radio" name="be_elect" value="b243" required />Bus 243: Economics of Distribution and Marketing</label>
+                    <br/>
+                    <label>
+                        <input type="radio" name="be_elect" value="b247" required />Bus 247: Business Economics</label>
+                    <br/>
+                    <label>
+                        <input type="radio" name="be_elect" value="b341w" required />Bus 341w: Intermediate Finance</label>
+                    <br/>
+                    <label>
+                        <input type="radio" name="be_elect" value="b351" required />Bus 351: Financial Markets</label>
+                    <br/>
+                    <label>
+                        <input type="radio" name="be_elect" value="e201" required>Eco 201: Macroeconomic Analysis</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="be_elect" value="e202" required>Eco 202: Price Theory</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="be_elect" value="e213" required>Eco 213: Economics of the Labor Force</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="be_elect" value="e214" required>Eco 214: Economics of Organized Labor</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="be_elect" value="e218" required>Eco 218: The Economics of State and Local Finance</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="be_elect" value="e220" required>Eco 220: Consumer Economics and Personal Finance</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="be_elect" value="e225" required>Eco 225: Price Theory (Mathematics emphasis)</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="be_elect" value="e226" required>Eco 226: Macroeconomic Analysis (Mathematics emphasis) </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="be_elect" value="e229" required>Eco 229: History of International Business and Finance</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="be_elect" value="e242" required>Eco 242: Regulation of American Business</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="be_elect" value="e246" required>Eco 246: Urban Economics</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="be_elect" value="e326" required>Eco 326: International Economics</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="be_elect" value="e382" required>Eco 382: Introduction to Econometrics</label>
+                    <br>
+                </td>
+                <td align="center">
+                    <label>
+                        <input type="radio" value="Yes" name="transferBEELE" id="transferBEELEyes" required />Yes</label>
+                    <label>
+                        <input type="radio" value="No" name="transferBEELE" id="transferBEELEno" required />No</label>
+                </td>
+
+                <td align="center">
+                    <select name="classStandingBEELE" required>
+                        <option value="">Select</option>
+                        <option value="Freshman-Lower">Freshman-Lower</option>
+                        <option value="Freshman-Upper">Freshman-Upper</option>
+                        <option value="Sophomore-Lower">Sophomore-Lower</option>
+                        <option value="Sophomore-Upper">Sophomore-Upper</option>
+                        <option value="Junior-Lower">Junior-Lower</option>
+                        <option value="Junior-Upper">Junior-Upper</option>
+                        <option value="Senior-Lower">Senior-Lower</option>
+                        <option value="Senior-Upper">Senior-Upper</option>
+                    </select>
+                </td>
+                <td align="center">
+                    <select name="semesterBEELE" required>
+                        <option value="">Select</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </td>
+
+                <td align="center">
+                    <input type="text" name="yearBEELE" maxlength="4" size="4" required />
+                </td>
+
+            </tr>
+        </table>
+
+
+
+
+
+        <br/>
+        <br/>
+        <br/>
+        <input type="submit" value="Submit Concentration Form" />
+        <br/>
+        <br/>
+        <br/>
+
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+        // function validateTransferCreditsYes(courseIDyes, courseIDno){
+        //                 $("#transferA101yes").prop("disabled", false);
+        //                 $("#transferA101no").prop("disabled", false);
+        //                 $("#transferA101yes").prop("required", true);
+        //                 $("#transferA101no").prop("required", true);
+
+
+        // }
+
+        // function validateTransferCreditsNo(courseID){
+
+
+        // }
+
+        $(document).ready(function () {
+
+            $("input:radio[name='transferStudent']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "Yes") {
+                    $("#transferColleges").prop("disabled", false);
+                    $("#transferColleges").prop("required", true);
+
+                    $("#transferA101yes").prop("disabled", false);
+                    $("#transferA101no").prop("disabled", false);
+                    $("#transferA101yes").prop("required", true);
+                    $("#transferA101no").prop("required", true);
+
+                    $("#transferA102yes").prop("disabled", false);
+                    $("#transferA102no").prop("disabled", false);
+                    $("#transferA102yes").prop("required", true);
+                    $("#transferA102no").prop("required", true);
+
+                    $("#transferA201yes").prop("disabled", false);
+                    $("#transferA201no").prop("disabled", false);
+                    $("#transferA201yes").prop("required", true);
+                    $("#transferA201no").prop("required", true);
+
+                    $("#transferA202yes").prop("disabled", false);
+                    $("#transferA202no").prop("disabled", false);
+                    $("#transferA202yes").prop("required", true);
+                    $("#transferA202no").prop("required", true);
+
+                    $("#transferA305yes").prop("disabled", false);
+                    $("#transferA305no").prop("disabled", false);
+                    $("#transferA305yes").prop("required", true);
+                    $("#transferA305no").prop("required", true);
+
+                    $("#transferA306yes").prop("disabled", false);
+                    $("#transferA306no").prop("disabled", false);
+                    $("#transferA306yes").prop("required", true);
+                    $("#transferA306no").prop("required", true);
+
+                    $("#transferA311yes").prop("disabled", false);
+                    $("#transferA311no").prop("disabled", false);
+                    $("#transferA311yes").prop("required", true);
+                    $("#transferA311no").prop("required", true);
+
+                    $("#transferA321yes").prop("disabled", false);
+                    $("#transferA321no").prop("disabled", false);
+                    $("#transferA321yes").prop("required", true);
+                    $("#transferA321no").prop("required", true);
+
+                    $("#transferA322yes").prop("disabled", false);
+                    $("#transferA322no").prop("disabled", false);
+                    $("#transferA322yes").prop("required", true);
+                    $("#transferA322no").prop("required", true);
+
+                    $("#transferA367yes").prop("disabled", false);
+                    $("#transferA367no").prop("disabled", false);
+                    $("#transferA367yes").prop("required", true);
+                    $("#transferA367no").prop("required", true);
+
+                    $("#transferA372yes").prop("disabled", false);
+                    $("#transferA372no").prop("disabled", false);
+                    $("#transferA372yes").prop("required", true);
+                    $("#transferA372no").prop("required", true);
+
+                    $("#transferA261yes").prop("disabled", false);
+                    $("#transferA261no").prop("disabled", false);
+                    $("#transferA261yes").prop("required", true);
+                    $("#transferA261no").prop("required", true);
+
+                    $("#transferA362yes").prop("disabled", false);
+                    $("#transferA362no").prop("disabled", false);
+                    $("#transferA362yes").prop("required", true);
+                    $("#transferA362no").prop("required", true);
+
+                    $("#transferE101yes").prop("disabled", false);
+                    $("#transferE101no").prop("disabled", false);
+                    $("#transferE101yes").prop("required", true);
+                    $("#transferE101no").prop("required", true);
+
+                    $("#transferE102yes").prop("disabled", false);
+                    $("#transferE102no").prop("disabled", false);
+                    $("#transferE102yes").prop("required", true);
+                    $("#transferE102no").prop("required", true);
+
+                    $("#transferE215yes").prop("disabled", false);
+                    $("#transferE215no").prop("disabled", false);
+                    $("#transferE215yes").prop("required", true);
+                    $("#transferE215no").prop("required", true);
+
+                    $("#transferE249yes").prop("disabled", false);
+                    $("#transferE249no").prop("disabled", false);
+                    $("#transferE249yes").prop("required", true);
+                    $("#transferE249no").prop("required", true);
+
+                    $("#transferB241yes").prop("disabled", false);
+                    $("#transferB241no").prop("disabled", false);
+                    $("#transferB241yes").prop("required", true);
+                    $("#transferB241no").prop("required", true);
+
+                    $("#transferC012yes").prop("disabled", false);
+                    $("#transferC012no").prop("disabled", false);
+                    $("#transferC012yes").prop("required", true);
+                    $("#transferC012no").prop("required", true);
+
+                    $("#transferAELEyes").prop("disabled", false);
+                    $("#transferAELEno").prop("disabled", false);
+                    $("#transferAELEyes").prop("required", true);
+                    $("#transferAELEno").prop("required", true);
+
+                    $("#transferBEELEyes").prop("disabled", false);
+                    $("#transferBEELEno").prop("disabled", false);
+                    $("#transferBEELEyes").prop("required", true);
+                    $("#transferBEELEno").prop("required", true);
+
+
+
+
+
+                }
+                else if (radioVal == "No") {
+                    document.getElementById("transferColleges").value = "";
+                    $("#transferColleges").prop("disabled", true);
+                    $("#transferColleges").prop("required", false);
+
+                    document.getElementById("transferA101yes").checked = false;
+                    document.getElementById("transferA101no").checked = false;
+                    $("#transferA101yes").prop("disabled", true);
+                    $("#transferA101no").prop("disabled", true);
+                    $("#transferA101yes").prop("required", false);
+                    $("#transferA101no").prop("required", false);
+
+                    document.getElementById("transferA102yes").checked = false;
+                    document.getElementById("transferA102no").checked = false;
+                    $("#transferA102yes").prop("disabled", true);
+                    $("#transferA102no").prop("disabled", true);
+                    $("#transferA102yes").prop("required", false);
+                    $("#transferA102no").prop("required", false);
+
+                    document.getElementById("transferA201yes").checked = false;
+                    document.getElementById("transferA201no").checked = false;
+                    $("#transferA201yes").prop("disabled", true);
+                    $("#transferA201no").prop("disabled", true);
+                    $("#transferA201yes").prop("required", false);
+                    $("#transferA201no").prop("required", false);
+
+                    document.getElementById("transferA202yes").checked = false;
+                    document.getElementById("transferA202no").checked = false;
+                    $("#transferA202yes").prop("disabled", true);
+                    $("#transferA202no").prop("disabled", true);
+                    $("#transferA202yes").prop("required", false);
+                    $("#transferA202no").prop("required", false);
+
+                    document.getElementById("transferA305yes").checked = false;
+                    document.getElementById("transferA305no").checked = false;
+                    $("#transferA305yes").prop("disabled", true);
+                    $("#transferA305no").prop("disabled", true);
+                    $("#transferA305yes").prop("required", false);
+                    $("#transferA305no").prop("required", false);
+
+                    document.getElementById("transferA306yes").checked = false;
+                    document.getElementById("transferA306no").checked = false;
+                    $("#transferA306yes").prop("disabled", true);
+                    $("#transferA306no").prop("disabled", true);
+                    $("#transferA306yes").prop("required", false);
+                    $("#transferA306no").prop("required", false);
+
+                    document.getElementById("transferA311yes").checked = false;
+                    document.getElementById("transferA311no").checked = false;
+                    $("#transferA311yes").prop("disabled", true);
+                    $("#transferA311no").prop("disabled", true);
+                    $("#transferA311yes").prop("required", false);
+                    $("#transferA311no").prop("required", false);
+
+                    document.getElementById("transferA321yes").checked = false;
+                    document.getElementById("transferA321no").checked = false;
+                    $("#transferA321yes").prop("disabled", true);
+                    $("#transferA321no").prop("disabled", true);
+                    $("#transferA321yes").prop("required", false);
+                    $("#transferA321no").prop("required", false);
+
+                    document.getElementById("transferA322yes").checked = false;
+                    document.getElementById("transferA322no").checked = false;
+                    $("#transferA322yes").prop("disabled", true);
+                    $("#transferA322no").prop("disabled", true);
+                    $("#transferA322yes").prop("required", false);
+                    $("#transferA322no").prop("required", false);
+
+                    document.getElementById("transferA367yes").checked = false;
+                    document.getElementById("transferA367no").checked = false;
+                    $("#transferA367yes").prop("disabled", true);
+                    $("#transferA367no").prop("disabled", true);
+                    $("#transferA367yes").prop("required", false);
+                    $("#transferA367no").prop("required", false);
+
+                    document.getElementById("transferA372yes").checked = false;
+                    document.getElementById("transferA372no").checked = false;
+                    $("#transferA372yes").prop("disabled", true);
+                    $("#transferA372no").prop("disabled", true);
+                    $("#transferA372yes").prop("required", false);
+                    $("#transferA372no").prop("required", false);
+
+                    document.getElementById("transferA261yes").checked = false;
+                    document.getElementById("transferA261no").checked = false;
+                    $("#transferA261yes").prop("disabled", true);
+                    $("#transferA261no").prop("disabled", true);
+                    $("#transferA261yes").prop("required", false);
+                    $("#transferA261no").prop("required", false);
+
+                    document.getElementById("transferA362yes").checked = false;
+                    document.getElementById("transferA362no").checked = false;
+                    $("#transferA362yes").prop("disabled", true);
+                    $("#transferA362no").prop("disabled", true);
+                    $("#transferA362yes").prop("required", false);
+                    $("#transferA362no").prop("required", false);
+
+                    document.getElementById("transferE101yes").checked = false;
+                    document.getElementById("transferE101no").checked = false;
+                    $("#transferE101yes").prop("disabled", true);
+                    $("#transferE101no").prop("disabled", true);
+                    $("#transferE101yes").prop("required", false);
+                    $("#transferE101no").prop("required", false);
+
+                    document.getElementById("transferE102yes").checked = false;
+                    document.getElementById("transferE102no").checked = false;
+                    $("#transferE102yes").prop("disabled", true);
+                    $("#transferE102no").prop("disabled", true);
+                    $("#transferE102yes").prop("required", false);
+                    $("#transferE102no").prop("required", false);
+
+                    document.getElementById("transferE215yes").checked = false;
+                    document.getElementById("transferE215no").checked = false;
+                    $("#transferE215yes").prop("disabled", true);
+                    $("#transferE215no").prop("disabled", true);
+                    $("#transferE215yes").prop("required", false);
+                    $("#transferE215no").prop("required", false);
+
+                    document.getElementById("transferE249yes").checked = false;
+                    document.getElementById("transferE249no").checked = false;
+                    $("#transferE249yes").prop("disabled", true);
+                    $("#transferE249no").prop("disabled", true);
+                    $("#transferE249yes").prop("required", false);
+                    $("#transferE249no").prop("required", false);
+
+                    document.getElementById("transferB241yes").checked = false;
+                    document.getElementById("transferB241no").checked = false;
+                    $("#transferB241yes").prop("disabled", true);
+                    $("#transferB241no").prop("disabled", true);
+                    $("#transferB241yes").prop("required", false);
+                    $("#transferB241no").prop("required", false);
+
+                    document.getElementById("transferC012yes").checked = false;
+                    document.getElementById("transferC012no").checked = false;
+                    $("#transferC012yes").prop("disabled", true);
+                    $("#transferC012no").prop("disabled", true);
+                    $("#transferC012yes").prop("required", false);
+                    $("#transferC012no").prop("required", false);
+
+                    document.getElementById("transferAELEyes").checked = false;
+                    document.getElementById("transferAELEno").checked = false;
+                    $("#transferAELEyes").prop("disabled", true);
+                    $("#transferAELEno").prop("disabled", true);
+                    $("#transferAELEyes").prop("required", false);
+                    $("#transferAELEno").prop("required", false);
+
+                    document.getElementById("transferBEELEyes").checked = false;
+                    document.getElementById("transferBEELEno").checked = false;
+                    $("#transferBEELEyes").prop("disabled", true);
+                    $("#transferBEELEno").prop("disabled", true);
+                    $("#transferBEELEyes").prop("required", false);
+                    $("#transferBEELEno").prop("required", false);
+
+                }
+
+
+            })
+
+        })
+    </script>
+
+</body>
+
+</html>
