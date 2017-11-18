@@ -9,6 +9,11 @@
             color: red;
         }
 
+        div#instructions {
+            border: 1px solid blue;
+            width: 100%;
+        }
+
         input[type=text] {
             padding: 5px;
             border: 1px solid #ccc;
@@ -17,7 +22,8 @@
 
         input[type=text]:focus {
             border-color: #333;
-            background-color: yellow;
+            background-color: blue;
+            color: white;
         }
 
         input[type=submit] {
@@ -27,7 +33,7 @@
             cursor: pointer;
             border-radius: 5px;
             color: white;
-            
+
         }
 
         table#courses {
@@ -141,6 +147,43 @@
 <body>
     <h1>Concentration Form (Accounting Department) </h1>
 
+    <div id="instructions">
+        <h4>Instructions</h4>
+        <ul>
+
+            <li> This Concentration Form is a Planning Tool. Its purpose is to help you plan out your Accounting Major courses
+                till you graduate.
+            </li>
+            <li> You should budget at least 30 to 60 minutes to complete this form. This form must be completed before you meet
+                with me.
+            </li>
+            <li>You will need transcripts from all schools you have attended, including Queens College. You will also need a
+                copy of your "transfer credit evaluation" form. If your credits were automatically evaluated, you can get
+                this information from CUNYfirst. Unofficial transcripts are fine.
+            </li>
+            <li>
+                Once you have all your transcripts, start completing the form below. Remember that this is a
+                <i>planning tool</i>. Since you are planning for the future, you will not always know exactly when you will
+                be able to take a particular course. In this case, use your best guess or estimate. It does not need to be
+                perfect. It is OK if things change in the future.
+            </li>
+            <li>
+                Once you have completed the Concentration Form, you will be able to print it out. Please print TWO copies.
+                <b>Sign and Date each copy</b>.
+            </li>
+            <li>Print a copy of the
+                <a href="http://www.qc.cuny.edu/registrar/Documents/Declaration%20of%20Major%20Form%20Fillable.pdf"
+                    target="_blank"> Major Declaration Form</a> from the Queens College Registrar website.</li>
+            <li>Bring the following when meeting with me:</li>
+            <ol>
+                <li>TWO Signed and Dated printed copies of your Concentration Form</li>
+                <li>Copies of transcripts from all previous schools, as well as Queens College. Unofficial copies are fine.</li>
+                <li>Fully completed Major Declaration Form.</li>
+            </ol>
+        </ul>
+
+    </div>
+    <br/>
     <form>
         <table id="basicInfo">
             <tr>
@@ -298,7 +341,7 @@
             </tr>
         </table>
         <br />
-       
+
         <br />
         <table id="courses">
             <tr>
